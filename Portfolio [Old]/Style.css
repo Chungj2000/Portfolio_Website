@@ -1,0 +1,601 @@
+body{ 
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+/* Conceal scrollbar whilst enabling scrolling*/
+::-webkit-scrollbar {
+    width: 0;  
+}
+
+div {
+    /**border: 2px solid;**/
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+  }
+
+h1 {
+    font-family: 'Lustrous', sans-serif;
+    font-weight: 700;
+    font-size: 8.2vh;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 2vh;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.textStyle-hollowBlack {
+    color: transparent;
+    -webkit-text-stroke: 2px black;
+}
+
+.textStyle-hollowRed {
+    color: transparent;
+    -webkit-text-stroke: 2px crimson;
+}
+
+.textStyle-fillRed {
+    color: crimson;
+    -webkit-text-stroke: 0px transparent;
+}
+
+#header-and{
+    /**Lustrous font does not include '&' in character set.**/
+    font-family: Arial, Helvetica, sans-serif,  sans-serif;
+    letter-spacing: 0;
+}
+
+/** ---------- **/
+/** NAVIGATION **/
+/** ---------- **/
+
+.main-navigation {
+    height: 0;
+    width: 0;
+    
+    position: absolute;
+
+    right: 3.2vh;
+    top: 30vh;
+    
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    z-index: 1;
+}
+
+.navigation-wrapper {
+    width: max-content;
+    height: max-content;
+
+    position: fixed;
+
+    right: 1.6vh;
+}
+
+.navigation-button, #navigation-checkbox {
+    width: 35px;
+    height: 35px;
+
+    margin: 6px 0;
+
+    position: absolute;
+
+    right: 0;
+    top: -5vh;
+}
+
+.navigation-button div {
+    width: 35px;
+    height: 5px;
+    
+    margin: 6px 0;
+    
+    background-color: black;
+
+    transition: 0.4s;
+}
+
+#navigation-checkbox {
+    /**Position above menu icon so it's interactable**/
+    z-index: 1;
+
+    opacity: 0;
+}
+
+/**Navigation checkbox toggle**/
+
+#navigation-checkbox:not(:checked) ~ .navigation-button .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+#navigation-checkbox:not(:checked) ~ .navigation-button .bar2 {
+    opacity: 0;
+}
+
+#navigation-checkbox:not(:checked) ~ .navigation-button .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+#navigation-checkbox:checked ~ .navigation-list, 
+#navigation-checkbox:checked ~ #navigation-slider {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(10vh, 0);
+}
+
+/**------------------------**/
+
+.navigation-list {
+    padding: 3.2vh 0;
+
+    list-style: none;
+    border-right: 2px solid;
+
+    transition: all 0.4s ease-out;
+}
+
+.navigation-list li {
+    padding: 2vh 1.6vh;
+
+    font-size: 2vh;
+    text-align: right;
+}
+
+.navigation-list li span a {
+    /**Set to max font-size to prevent vertical rescaling of navigation-list**/
+    line-height: 3.2vh;
+    color: black;
+}
+
+.navigation-list li span a:hover, 
+.navigation-list li span a:active, 
+.navigation-list li span a:focus {
+    color: crimson;
+}
+
+.active {
+    /**Override color**/
+    color: crimson !important;
+    font-size: 3.2vh;
+}
+
+#navigation-slider {
+    height: 2.5vh;
+    
+    position: absolute;
+
+    top: 7.2vh;
+    right: -1px;
+
+    border-right: 4px solid crimson;
+
+    transition: all 0.4s ease-out;
+}
+
+/** ------------ **/
+/** MAIN CONTENT **/
+/** ------------ **/
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+#background {
+    margin: -1vh -1vh;
+    position: fixed;
+
+    z-index: -999;
+}
+
+.content {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.home-description {
+    margin: 35vh 10vh;
+    position: absolute;
+    z-index: 1;
+}
+
+.home-description h1 {
+    margin: 0;
+    font-size: 13.1vh;
+
+    letter-spacing: 10px;
+    text-shadow: 0 3px 3px #ff000060;
+}
+
+.home-description h2 {
+    margin: 0;
+    font-size: 3.2vh;
+}
+
+.content-container {
+    width: auto;
+    margin: 20vh 10vh;
+    position: absolute;
+
+    z-index: 1;
+}
+
+.title-container {
+    position: relative;
+    margin-bottom: 7.5vh;
+    /*border: 2px solid;*/
+}
+
+.title-wedge {
+    width: 125%;
+    height: 100%;
+    position: absolute;
+
+    left: -11vh;
+
+    background-color: hsla(195, 10%, 40%, 0.25);
+    clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+
+    z-index: -1;
+}
+
+.title-container h1 {
+    margin: 0;
+}
+
+.title-container h2 {
+    margin-bottom: 7.5vh;
+}
+
+.slideshow-container {
+    width: 64vh;
+
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+
+    /*border: 2px solid;*/
+}
+
+.slideshow {
+    height: 36vh;
+
+    position: relative;
+
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25) ;
+}
+
+.slideshow div {
+    height: inherit;
+    width: 64vh;
+
+    position: absolute;
+
+    display: inline-block;
+    overflow: hidden;
+}
+
+.slideshow img {
+    width: inherit;
+}
+
+.slideshow div:hover {
+    cursor: zoom-in;
+}
+
+.slideshow div:not(:first-child) {
+    visibility: hidden;
+}
+
+.slideshow-footer button {
+    border: none;
+    background-color: crimson;
+    box-shadow: 2px 2px #ff000060 ;
+
+    cursor: pointer;
+}
+
+.slideshow-prevNext {
+    display: inline-block;
+}
+
+.slideshow-prevNext button {
+    height: 5vh;
+    width: 5vh;
+
+    margin: 1vh .5vh 0 0;
+
+    font-size: 3.2vh;
+    color: white;
+    text-align: center;
+
+    background: linear-gradient(to bottom, crimson 50%, transparent 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    
+    transition: 0.15s ease-in-out;
+}
+
+.slideshow-prevNext button:hover {
+    border: 2px solid black;
+    box-shadow: none;
+    color: black;
+    background-position: bottom;
+}
+
+.slideshow-number {
+    position: relative;
+    display: inline-block;
+
+    white-space: nowrap;
+}
+
+.slideshow-number h1 {
+    position: absolute;
+    margin: -4.5vh .75vh;
+
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 5.1vh;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    color: crimson;
+}
+
+.slideshow-number p {
+    width: 25vh;
+    position: absolute;
+
+    margin: -1.5vh 0vh -1.5vh 9.5vh;
+
+    font-family: 'Lustrous', sans-serif;
+    font-style: italic;
+    font-size: 2vh;
+    font-weight: 900;
+    text-align: right;
+}
+
+.slideshow-number div {
+    height: 1vh;
+    width: 27.5vh;
+
+    position: absolute;
+
+    margin: -3.25vh 8.5vh;
+
+    background-color: crimson;
+    clip-path: polygon(2% 0, 100% 0%, 99% 100%, 2% 100%, 0% 50%);
+}
+
+.slideshow-pages {
+    position: absolute;
+
+    display: inline-block;
+
+    bottom: 2.5vh;
+    right: 0.5vh;
+}
+
+.slideshow-pages .clipPath-border {
+    height: 2.5vh;
+    width: 2.5vh;
+
+    position: relative;
+    display: inline-block;
+
+    background-color: transparent;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+
+    transition: transform 0.1s ease-in;
+}
+
+.slideshow-pages button {
+    height: 2vh;
+    width: 2vh;
+
+    margin: .25vh;
+
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.slideshow-pages div:first-child button {
+    background-color: white;
+}
+
+.slideshow-pages .clipPath-border:nth-child(1) {
+    background-color: black;
+}
+
+.slideshow-pages button:hover {
+    background-color: white;
+}
+
+.clipPath-border:has(button:hover) {
+    background-color: black;
+    transform: translateY(-0.15vh);
+}
+
+.description-container {
+    width: 50vh;
+
+    margin: auto 15vh;
+    position: absolute;
+
+    display: inline-block;
+
+    text-align: center;
+}
+
+.icon {
+    height: 5vh;
+    width: 5vh;
+    margin: auto;
+
+    position: relative;
+
+    border-radius: 50%;
+    background-color: #24292F ;
+    overflow: hidden;
+}
+
+.icon img {
+    height: 5.2vh;
+    width: 5.2vh;
+
+    position: absolute;
+
+    border-radius: 50%;
+    transform: translate(-50%, -3%);
+}
+
+.icon:before {
+    content: "";
+
+    height: 75px;
+    width: 75px;
+
+    position: absolute;
+
+    background-color: #dc143c;
+    border-radius: 40%;
+
+    transform: translate(-50%, 70%);
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.icon:hover:before {
+    animation: fill 2.5s ease-in-out forwards /*infinite*/ alternate;
+}
+
+@keyframes fill {
+    to {
+        transform: translate(-50%, 0%) rotate(360deg);
+    }
+}
+
+/** ---- **/
+/** HOME **/
+/** ---- **/
+
+/*
+#home-background {
+    height: 100%;
+    min-width: 150vh;
+
+    rotate: 45deg;
+    transition: all 1s;
+}
+
+#home-background .arrow {
+    display: inline-block;
+
+    margin: -50.7vh -5vh;
+
+    font-size: 138vh;
+    color: rgba(255, 46, 46, 0.479);
+    opacity: 0;
+
+    transform: translate(-150vh, 0);
+}
+
+#arrow-first {
+    transition: all 1s;
+}
+
+#arrow-second {
+    transition: all 1.4s;
+}
+*/
+
+#home-background {
+    position: absolute;
+
+    left: 0;
+}
+
+.arrows div {
+    height: 100vh;
+    width: 50vh;
+
+    margin: 0 -6.5vh;
+
+    display: inline-block;
+}
+
+/*
+.arrows {
+    transition: transform 0.5s ease-in-out;
+}
+
+.arrows:hover {
+    transform: translate(-10vh);
+}
+*/ 
+
+.arrow-full {
+    background-color: hsla(195, 10%, 40%, 0.25);
+    clip-path: polygon(43% 0, 100% 72%, 47% 100%, 0 100%, 0 72%, 0% 0%);
+
+    /*
+    background: 
+        linear-gradient(-112.5deg, transparent 22.5vh, #ff7c7c 0) top left, 
+        linear-gradient(-67.5deg, transparent 22.5vh, #ff7c7c 0) bottom right;
+    background-size: 100% 50.1%;
+    background-repeat: no-repeat;
+    */ 
+}
+
+.arrow-cut {
+    background-color: hsla(195, 10%, 40%, 0.25);
+    clip-path: polygon(43% 0, 100% 72%, 47% 100%, 0 100%, 57% 72%, 0% 0%);
+
+    /*
+    background: 
+        linear-gradient(67.5deg, transparent 22.5vh, #ff7c7c 0) top left, 
+        linear-gradient(112.5deg, transparent 22.5vh, #ff7c7c 0) bottom left,
+        linear-gradient(-112.5deg, transparent 22.5vh, #ff7c7c 0) top right,
+        linear-gradient(-67.5deg, transparent 22.5vh, #ff7c7c 0) bottom right;
+    background-size: 50.1% 50.1%;
+    background-repeat: no-repeat;
+    */ 
+}
+
+#arrow1 {
+    transform: translate(-150vh, 0);
+    opacity: 0;
+
+    transition: all 1.5s;
+}
+
+#arrow2 {
+    transform: translate(-150vh, 0);
+    opacity: 0;
+
+    transition: all 1.25s;
+}
+
+#arrow3 {
+    transform: translate(-150vh, 0);
+    opacity: 0;
+
+    transition: all 1s;
+}

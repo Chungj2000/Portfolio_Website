@@ -1,0 +1,198 @@
+<html lang = "en">
+
+    <head>
+
+        <!--Character set-->
+        <meta charset="utf-8">
+
+        <!--Width and zoom parameters-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Description when browsed-->
+        <meta name="description" content="">
+
+        <!--Stylization here-->
+        <link href="Style.css" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/advent-pro" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/lustrous" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/narnoor" rel="stylesheet">
+        
+        <!--Webpage icon here-->
+        <link rel="icon" href="" type="">
+
+        <!--Scripts here-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="Scripts.js"></script>
+
+        <title> Portfolio </title>
+
+    </head>
+
+    <body>
+
+        <div id="loadscreen">
+            <div>
+                <div id="loadingGears">
+                    <img id="loadingGears-a" src="Images/LoadingGears_A.png"></img>
+                    <img id="loadingGears-b" src="Images/LoadingGears_B.png"></img>
+                </div>
+                <p id="loading-text"></p>
+                <div id="loadscreen-loadbar">
+                    <div id="loadbar-fill"></div>
+                </div>
+                <p id="loadscreen-percentage">1%</p>
+            </div>
+        </div>
+
+        <div class="content-container" id="home">
+
+            <div id="home-description">
+                <div id="home-title">
+                    <svg viewBox="0 0 960 160" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="75%" class="default">Portfolio</text>
+                    </svg>
+                </div>
+
+                <div id="socials">
+                    <button class="social-icons"><img src="Images/Github Reverse.png"></img></button>
+                    <button class="social-icons"><img src="Images/Linkedin Reverse.png"></img></button>
+                </div>
+            </div>
+
+            <div id="animation-html" class="active-animation">
+                <img id="anim-html-cloud" src="Images/HTML Cloud.png"></img>
+                <img id="anim-html-confetti" src="Images/HTML Confetti.png"></img>
+                <img id="anim-html-core" src="Images/HTML Core.png"></img>
+                <img id="anim-html-redTriangle" src="Images/HTML Red Triangle.png"></img>
+                <img id="anim-html-yellowStar" src="Images/HTML Yellow Star.png"></img>
+                <img id="anim-html-yellowTriangle" src="Images/HTML Yellow Triangle.png"><span></span></img>
+            </div>
+
+        </div>
+
+        <div class="content-container" id="decisiveBattlefront">
+            <div class="content-header">
+                <div class="header-background"></div>
+                <h1>Decisive <span class="textStyle-fillRed">Battlefront</span></h1>
+            </div>
+
+            <div id="slideshow-container"> 
+                <div id="slideshow-contents">
+                    <div id="slideshow">
+
+                    </div>
+
+                    <div id="slideshow-description">
+                    
+                    </div>
+                </div>
+
+                <div id="slideshow-footer">
+                    <button class="slideshow-button" id="slideshow-prev">&#10094;</button>
+                    <button class="slideshow-button" id="slideshow-next">&#10095;</button>
+                </div>
+            </div>
+            
+            <!--
+            <div id="animation-gears1" class="active-animation">
+                <img id="anim-gears-1a" src="Images/Gears_1A.png"></img>
+                <img id="anim-gears-1b" src="Images/Gears_1B.png"></img>
+                <img id="anim-gears-1c" src="Images/Gears_1C.png"></img>
+                <img id="anim-gears-1d" src="Images/Gears_1D.png"></img>
+            </div>
+
+            <div id="animation-gears2" class="active-animation">
+                <img id="anim-gears-2a" src="Images/Gears_2A.png"></img>
+                <img id="anim-gears-2b" src="Images/Gears_2B.png"></img>
+            </div>
+            -->
+
+        </div>
+
+        <div class="content-container" id="bloodTide">
+            <div class="content-header">
+                <div class="header-background"></div>
+                <h1>Blood <span class="textStyle-fillRed">Tide</span></h1>
+            </div>
+
+            <!--
+            <div id="circles">
+                <div id="circle"></div>
+                <div class="donut"></div>
+                <div class="donut"></div>
+                <div class="donut"></div>
+            </div>
+            -->
+
+        </div>
+
+        <div class="content-container" id="characterConnect">
+            <div class="content-header">
+                <div class="header-background"></div>
+                <h1>Character <span class="textStyle-fillRed">Connect</span></h1>
+            </div>
+        </div>
+
+        <div class="content-container" id="modelingAnimation">
+            <div class="content-header">
+                <div class="header-background"></div>
+                <h1>Modeling <span class="textStyle-hollowBlack textStyle-and">&</span> <span class="textStyle-fillRed">Animation</span></h1>
+            </div>
+        </div>
+
+        <!--Navigation-->
+        <div class="main-navigation">
+
+            <div class="navigation-wrapper">
+
+                <input type="checkbox" id="navigation-checkbox">
+
+                <div class="navigation-button">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+                <ul class="navigation-list">
+
+                    <li id="navigation-home">
+                        <span>
+                            <a href="#home" class="active">Home</a>
+                        </span>
+                    </li>
+
+                    <li id="navigation-decisiveBattlefront">
+                        <span>
+                            <a href="#decisiveBattlefront">Decisive Battlefront</a>
+                        </span>
+                    </li>
+
+                    <li id="navigation-bloodTide">
+                        <span>
+                            <a href="#bloodTide">Blood Tide</a>
+                        </span>
+                    </li>
+
+                    <li id="navigation-characterConnect">
+                        <span>
+                            <a href="#characterConnect">Character Connect</a>
+                        </span>
+                    </li>
+
+                    <li id="navigation-modelingAnimation">
+                        <span>
+                            <a href="#modelingAnimation">Modeling & Animation</a>
+                        </span>
+                    </li>
+
+                </ul>
+
+                <div id="navigation-slider">
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
